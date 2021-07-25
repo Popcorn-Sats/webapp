@@ -1,5 +1,4 @@
 import React from 'react'
-import routes from '../routes/index'
 import { Link } from 'react-router-dom'
 import { EditIcon, DropdownIcon, TrashIcon } from '../icons'
 import Server from '../utils/server'
@@ -112,7 +111,7 @@ export class Account extends React.Component {
   }
 
   renderButtons() {
-    let saveButton, cancelButton, deleteButton
+    let saveButton, cancelButton
 
     if (this.hasChanges() && this.hasAllRequiredFields()){
       saveButton = <Button aria-label="Delete" block size="small" onClick={this.onSubmitButtonClicked}>Save</Button>

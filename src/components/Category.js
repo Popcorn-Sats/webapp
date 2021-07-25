@@ -88,7 +88,7 @@ export class Category extends React.Component {
    }
 
   renderButtons() {
-    let saveButton, cancelButton, deleteButton
+    let saveButton, cancelButton
 
     if (this.hasChanges() && this.hasAllRequiredFields()){
       saveButton = <Button aria-label="Delete" block size="small" onClick={this.onSubmitButtonClicked}>Save</Button>
