@@ -5,7 +5,7 @@ import Expenses from '../components/Insights/Expenses'
 import Cashflow from '../components/Insights/Cashflow'
 import Balance from '../components/Insights/Balance'
 import Categories from '../components/Categories'
-import Server from '../utils/server'
+import Server from '../services/server'
 
 export default class Insights extends React.Component {
   constructor(props) {

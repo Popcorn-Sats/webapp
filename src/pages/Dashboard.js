@@ -7,7 +7,7 @@ import AccountBalance from '../components/Dashboard/TotalBalance'
 import New from '../components/Dashboard/New'
 import Unconfirmed from '../components/Dashboard/Unconfirmed'
 import { Charts } from '../components/Dashboard/Charts'
-import Server from '../utils/server'
+import Server from '../services/server'
 
 export default class Dashboard extends React.Component {
   constructor(props) {

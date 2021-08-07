@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { EditIcon, DropdownIcon, TrashIcon } from '../icons'
-import Server from '../utils/server'
+import Server from '../services/server'
 
 import {
     TableCell,

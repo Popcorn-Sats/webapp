@@ -1,6 +1,6 @@
 import React from 'react'
 import { EditIcon, DropdownIcon, TrashIcon } from '../icons'
-import Server from '../utils/server'
+import Server from '../services/server'
 
 import {
     TableCell,

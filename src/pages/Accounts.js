@@ -3,7 +3,7 @@ import React from 'react'
 import PageTitle from '../components/Typography/PageTitle'
 import Accounts from '../components/Accounts'
 import Payees from '../components/Payees'
-import Server from '../utils/server'
+import Server from '../services/server'
 
 export default class AccountsView extends React.Component {
   constructor(props) {

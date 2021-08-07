@@ -2,7 +2,7 @@ import React from 'react'
 
 import PageTitle from '../components/Typography/PageTitle'
 import Transactions from '../components/Transactions'
-import Server from '../utils/server'
+import Server from '../services/server'
 
 export default class Wallet extends React.Component {
   constructor(props) {

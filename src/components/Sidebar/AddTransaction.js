@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Formik, Field } from 'formik'
-import Server from '../../utils/server'
+import Server from '../../services/server'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Input, Label, Select, Textarea } from '@windmill/react-ui'
 
 import "react-datepicker/dist/react-datepicker.css";
