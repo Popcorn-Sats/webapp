@@ -22,15 +22,15 @@ const routes = [
     routes: [
       // submenu
       {
-        path: '/app/wallet',
+        path: '/app/account',
         name: 'Wasabi',
       },
       {
-        path: '/app/wallet',
+        path: '/app/account',
         name: 'Coldcard 1',
       },
       {
-        path: '/app/wallet',
+        path: '/app/account',
         name: 'Trezor',
       },
     ],

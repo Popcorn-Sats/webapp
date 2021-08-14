@@ -61,7 +61,7 @@ function AddTransaction(props) {
                         Server.newTransaction(JSON.stringify(values, null, 2));
                         setSubmitting(false);
                         closeModal();
-                        history.push('/app/wallet');
+                        history.push('/app/acount');
                         // TODO: make sure the accounts data pulls fresh from DB (actually, res should send new object back)
                     }, 400)
                 }}

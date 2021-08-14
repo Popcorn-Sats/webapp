@@ -174,7 +174,7 @@ export class Payee extends React.Component {
         return (
             <TableRow key={this.props.account.id}>
                 <TableCell>
-                <Link to="/app/wallet">
+                <Link to="/app/account">
                 <span className="text-sm">{this.state.account.name}</span>
                 </Link>
                 </TableCell>

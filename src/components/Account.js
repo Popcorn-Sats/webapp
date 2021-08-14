@@ -120,7 +120,7 @@ export class Account extends React.Component {
     }
 
     if (this.hasChanges()) {
-      // Note: need to revert state on cancel
+      // TODO: need to revert state on cancel
       cancelButton = <Button layout="outline" aria-label="Cancel" onClick={this.cancelEdit} block size="small">Cancel</Button>
     } else {
       cancelButton = <Button layout="outline" aria-label="Cancel" onClick={this.onEditButtonClicked} block size="small">Cancel</Button>

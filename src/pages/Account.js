@@ -4,7 +4,7 @@ import PageTitle from '../components/Typography/PageTitle'
 import Transactions from '../components/Transactions'
 import Server from '../services/server'
 
-export default class Wallet extends React.Component {
+export default class Account extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
