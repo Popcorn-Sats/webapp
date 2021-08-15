@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Server from '../services/server'
 import {
   useTable,
   usePagination,
@@ -9,6 +10,8 @@ import {
   useRowSelect,
 } from 'react-table'
 import {matchSorter} from 'match-sorter'
+
+import Select, { Creatable } from 'react-select'
 
 import {
   TableBody,
@@ -500,6 +503,24 @@ const IndeterminateCheckbox = React.forwardRef(
 )
 
 function App(props) {
+  const categories = [{id: 0, name: "Test"}, {id: 1, name: "Test"}, {id: 2, name: "Test"}]
+  const {transactions} = props
+  const category = {...transactions}
+  const [data, setData] = useState([])
+  const [originalData] = useState(data)
+
+  useEffect(() => {
+    setData(transactions);
+  },[transactions]);
+
+
+  const getCategories = () => {
+    Server.categories()
+      .then(categories.push(category.id, category.name))
+  }
+
+  // getCategories()
+  
   const columns = React.useMemo(
     () => [
       {
@@ -553,6 +574,9 @@ function App(props) {
           {
             Header: 'Category',
             accessor: 'category.name',
+            Cell: ({row})=> {
+              return <Select options={categories} value={category.name} /* defaultValue={{ id: row.original.category.id, name: row.original.category.name}} */ />
+            },
             Filter: SelectColumnFilter,
             filter: 'includes',
           },
@@ -570,13 +594,6 @@ function App(props) {
     ],
     []
   )
-  const {transactions} = props
-  const [data, setData] = useState([])
-  const [originalData] = useState(data)
-
-  useEffect(() => {
-    setData(transactions);
-  },[transactions]);
 
   // We need to keep the table from resetting the pageIndex when we
   // Update data. So we can keep track of that flag with a ref.
@@ -591,6 +608,10 @@ function App(props) {
     setData(old =>
       old.map((row, index) => {
         if (index === rowIndex) {
+          Server.editTransaction(JSON.parse(JSON.stringify({
+            ...row,
+            [columnId]: value,
+          })))
           return {
             ...row,
             [columnId]: value,
@@ -618,7 +639,7 @@ function App(props) {
 
   return (
     <>
-      <button onClick={resetData}>Reset Data</button>
+      {/* <button onClick={resetData}>Reset Data</button> */}
       <TableContainer>
       <TransactionsTable
         columns={columns}
